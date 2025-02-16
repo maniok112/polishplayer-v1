@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-slate-200 text-slate-900;
+	@apply dark:bg-slate-900 dark:text-slate-50;
+}
+
+.container {
+	@apply p-2 max-w-screen-xl mx-auto;
+}
+
+main,
+footer {
+	@apply container;
+}
+
+header {
+	@apply dark:bg-slate-900/75 bg-slate-200/75;
+	@apply sticky top-0 z-10;
+	@apply backdrop-blur;
+	@apply shadow;
+}
+
+a {
+	@apply hover:underline decoration-cyan-500 underline-offset-2;
+}
+
+input,
+select {
+	@apply bg-transparent;
+	@apply dark:text-slate-300;
+}
+
+progress {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+::-webkit-progress-value {
+	@apply rounded;
+	@apply bg-cyan-500;
+}
+
+::-webkit-progress-bar {
+	@apply rounded;
+	@apply dark:bg-slate-700 bg-slate-100;
+}
+
+.fadein {
+	animation: fadeIn ease-in-out 0.5s;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+#splash {
+	animation: parallax linear;
+	animation-timeline: scroll();
+}
+
+@keyframes parallax {
+	0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(25%);
+	}
+}
